@@ -29,13 +29,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.ui.screens.ScreenOne
 import com.example.ui.screens.ScreenTwo
-import com.example.ui.screens.WebViewScreen
 import com.example.ui.theme.MyApplicationTheme
 
 enum class PortalScreen {
   HOME,
-  EXPLORE,
-  WEB_VIEW
+  EXPLORE
 }
 
 class MainActivity : ComponentActivity() {
@@ -52,22 +50,19 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PortalApp() {
+  val context = LocalContext.current
   var currentScreen by rememberSaveable { mutableStateOf(PortalScreen.HOME) }
-  var webTitle by rememberSaveable { mutableStateOf("Google") }
-  var webUrl by rememberSaveable { mutableStateOf("https://www.google.com") }
-  var returnScreen by rememberSaveable { mutableStateOf(PortalScreen.HOME) }
-  var returnLabel by rememberSaveable { mutableStateOf("Voltar") }
 
-  // Intercept back navigation when not on home screen
-  BackHandler(enabled = currentScreen != PortalScreen.HOME) {
-    currentScreen = if (currentScreen == PortalScreen.WEB_VIEW) returnScreen else PortalScreen.HOME
+  // Intercept back navigation when on second screen
+  BackHandler(enabled = currentScreen == PortalScreen.EXPLORE) {
+    currentScreen = PortalScreen.HOME
   }
 
   Surface(modifier = Modifier.fillMaxSize()) {
     AnimatedContent(
         targetState = currentScreen,
         transitionSpec = {
-          if (targetState == PortalScreen.WEB_VIEW || (initialState == PortalScreen.HOME && targetState == PortalScreen.EXPLORE)) {
+          if (targetState == PortalScreen.EXPLORE) {
             (slideInHorizontally(
                 animationSpec = tween(320),
                 initialOffsetX = { fullWidth -> fullWidth }
@@ -95,18 +90,10 @@ fun PortalApp() {
         PortalScreen.HOME -> {
           ScreenOne(
               onOpenGoogle = {
-                webTitle = "Google"
-                webUrl = "https://www.google.com"
-                returnScreen = PortalScreen.HOME
-                returnLabel = "Voltar ao Início"
-                currentScreen = PortalScreen.WEB_VIEW
+                openExternalUri(context, "https://www.google.com")
               },
               onOpenYouTube = {
-                webTitle = "YouTube"
-                webUrl = "https://www.youtube.com"
-                returnScreen = PortalScreen.HOME
-                returnLabel = "Voltar ao Início"
-                currentScreen = PortalScreen.WEB_VIEW
+                openExternalUri(context, "https://www.youtube.com")
               },
               onNavigateToScreenTwo = {
                 currentScreen = PortalScreen.EXPLORE
@@ -116,24 +103,10 @@ fun PortalApp() {
         PortalScreen.EXPLORE -> {
           ScreenTwo(
               onOpenMaps = {
-                webTitle = "Google Maps"
-                webUrl = "https://maps.google.com"
-                returnScreen = PortalScreen.EXPLORE
-                returnLabel = "Voltar"
-                currentScreen = PortalScreen.WEB_VIEW
+                openExternalUri(context, "https://maps.google.com")
               },
               onBackToHome = {
                 currentScreen = PortalScreen.HOME
-              }
-          )
-        }
-        PortalScreen.WEB_VIEW -> {
-          WebViewScreen(
-              title = webTitle,
-              url = webUrl,
-              returnDestinationLabel = returnLabel,
-              onBack = {
-                currentScreen = returnScreen
               }
           )
         }
