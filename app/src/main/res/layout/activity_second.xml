@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/bg_screen_two">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="32dp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/tv_badge_screen_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/screen_two_badge"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#34D399"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/bg_button_secondary"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tv_title_screen_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/screen_two_title"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tv_subtitle_screen_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/screen_two_subtitle"
+            android:textSize="14sp"
+            android:textColor="#94A3B8"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="40dp" />
+
+        <!-- Botão 1: Google Maps -->
+        <Button
+            android:id="@+id/btn_maps"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:maxWidth="440dp"
+            android:text="@string/btn_maps_title"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_button_maps"
+            android:stateListAnimator="@null"
+            android:elevation="4dp"
+            android:layout_marginBottom="18dp" />
+
+        <!-- Botão 2: Voltar para o início (Único botão de retorno na interface da tela) -->
+        <Button
+            android:id="@+id/btn_back_home"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:maxWidth="440dp"
+            android:text="@string/btn_back_home_title"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_button_back_home"
+            android:stateListAnimator="@null"
+            android:elevation="4dp" />
+
+    </LinearLayout>
+</ScrollView>
