@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Portal</string>
+    <string name="screen_one_badge">Hub Principal</string>
+    <string name="screen_one_title">Acesso Rápido</string>
+    <string name="screen_one_subtitle">Navegue com fluidez e minimalismo para os seus serviços favoritos.</string>
+    
+    <string name="btn_google_title">Google</string>
+    <string name="btn_google_desc">Pesquisa inteligente e informações</string>
+    
+    <string name="btn_youtube_title">YouTube</string>
+    <string name="btn_youtube_desc">Vídeos, canais e entretenimento</string>
+    
+    <string name="nav_to_screen_two">Explorar mais serviços</string>
+    <string name="nav_to_screen_two_desc">Acesse a segunda tela para navegação e mapas</string>
+    
+    <string name="screen_two_badge">Navegação &amp; Local</string>
+    <string name="screen_two_title">Exploração</string>
+    <string name="screen_two_subtitle">Descubra rotas, locais e retorne à tela principal quando quiser.</string>
+    
+    <string name="btn_maps_title">Google Maps</string>
+    <string name="btn_maps_desc">Rotas em tempo real, trânsito e mapas</string>
+    
+    <string name="btn_back_home_title">Voltar para o início</string>
+    <string name="btn_back_home_desc">Retornar para a tela inicial</string>
+    
+    <string name="open_external_link">Abrir link externo</string>
+    <string name="action_open">Abrir</string>
+    <string name="action_return">Voltar</string>
+    <string name="return_to_home">Voltar ao Início</string>
+    <string name="return_to_explore">Voltar</string>
+</resources>
+

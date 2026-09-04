@@ -1,0 +1,7 @@
+{
+  "name": "Portal",
+  "description": "Aplicativo moderno e minimalista com duas telas intuitivas para acesso rápido a Google, YouTube e Google Maps.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
